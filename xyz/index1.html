@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Service Booking </title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff3e6;
+            text-align: center;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ff6f00;
+            color: white;
+            padding: 15px 20px;
+        }
+        .logo { font-size: 24px; font-weight: bold; font-family: 'Dancing Script', cursive; }
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        header input {
+            padding: 10px;
+            width: 300px;
+            border-radius: 5px;
+            border: none;
+        }
+        button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .login-btn { background-color: white; color: #ff6f00; }
+        .list-service-btn { background-color: #ffcc00; }
+
+        .hero {
+            background-image: url('indian-wedding.jpg');
+            background-size: cover;
+            background-position: center;
+            color: rgb(0, 0, 0);
+            padding: 100px 20px;
+            font-family: 'Dancing Script', cursive;
+        }
+        .search-btn { background-color: #d32f2f; color: white; }
+
+        .categories, .vendors, .filters, .featured-vendors {
+            padding: 40px 20px;
+        }
+        .category-list, .vendor-list, .featured-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .category, .vendor, .featured {
+            background-color: #ffcc80;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .category:hover, .vendor:hover, .featured:hover { transform: scale(1.05); background-color: #ffb74d; }
+
+        .filters select {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+        }
+        .popup button { background-color: #ff6f00; color: white; }
+
+        footer { background-color: #222; color: white; padding: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Occasia</div>
+        <nav class="nav-links">
+            <a href="#">Home</a>
+            <a href="#categories">Services</a>
+            <a href="#vendors">Vendors</a>
+        </nav>
+        <input type="text" placeholder="Search for services...">
+        <button class="login-btn" onclick="openPopup()">Login / Signup</button>
+        <button class="list-service-btn">List Your Service</button>
+    </header>
+    
+    <section class="hero">
+        <h1>Book Trusted Indian Event Professionals</h1>
+        <p>Photographers, Caterers, Venue Providers, Decorators & More!</p>
+        <input type="text" placeholder="Find a service in your city">
+        <button class="search-btn">Search</button>
+    </section>
+    
+    <section class="filters">
+        <h2>Filter by:</h2>
+        <select>
+            <option>Price - Low to High</option>
+            <option>Price - High to Low</option>
+        </select>
+        <select>
+            <option>Availability Calendar</option>
+        </select>
+    </section>
+    
+    <section id="categories" class="categories">
+        <h2>Explore Services</h2>
+        <div class="category-list">
+            <div class="category">📷 Photography</div>
+            <div class="category">🍽 Catering</div>
+            <div class="category">🏨 Venue Providers</div>
+            <div class="category">🎉 Decorations</div>
+            <div class="category">🎵 Music & DJ</div>
+        </div>
+    </section>
+    
+    <section id="vendors" class="featured-vendors">
+        <h2>Featured Vendors</h2>
+        <div class="featured-list">
+            <div class="featured">🌟 Best-rated Photographer</div>
+            <div class="featured">🌟 Top Caterer</div>
+            <div class="featured">🌟 Premium DJ Service</div>
+        </div>
+    </section>
+    
+    <div class="popup" id="popup">
+        <h2>Login / Signup</h2>
+        <input type="text" placeholder="Enter email">
+        <input type="password" placeholder="Enter password">
+        <button onclick="closePopup()">Submit</button>
+    </div>
+    
+    <footer>
+        <p>© 2025 Occasia. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        function openPopup() {
+            document.getElementById("popup").style.display = "block";
+        }
+        function closePopup() {
+            document.getElementById("popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
